@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Use Roboto for body text */
+    color: #f0f0f0; /* Light color for text */
+    background: #1a1a1a; /* Dark background */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out the sections */
+    height: 100vh; /* Full viewport height */
+}
+
+.countdown-container {
+    text-align: center;
+    z-index: 2; /* Ensure text is above the slideshow */
+    padding: 20px; /* Add padding around the text */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    border-radius: 10px; /* Rounded corners */
+    flex: 1; /* Allow the container to grow and shrink */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+}
+
+#names {
+    font-size: 3em; /* Larger font size for names */
+    font-weight: bold; /* Bold font */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for names */
+    color: #FF6F61; /* Gold color for names */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    margin-bottom: 20px; /* Space below names */
+}
+
+#countdown {
+    font-size: 2.5em; /* Increase font size */
+    margin: 20px 0; /* Space above and below countdown */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.countdown-item {
+    margin: 10px; /* Space between items */
+    padding: 10px 15px; /* Padding around items */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    flex: 0 1 120px; /* Allow items to grow and shrink, with a base width of 120px */
+    max-width: 150px; /* Set a maximum width for the countdown items */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #names {
+        font-size: 2.5em; /* Smaller font size for mobile */
+    }
+
+    #countdown {
+        font-size: 2em; /* Smaller font size for countdown */
+    }
+
+    .countdown-item {
+        flex: 0 1 80px; /* Allow items to grow and shrink, with a base width of 80px */
+        max-width: 100px; /* Set a maximum width for the countdown items */
+    }
+
+    #venue {
+        font-size: 1.2em; /* Smaller font size for venue */
+    }
+}
+
+@media (max-width: 480px) {
+    #names {
+        font-size: 2em; /* Further reduce font size for very small screens */
+    }
+
+    #countdown {
+        font-size: 1.5em; /* Further reduce font size for countdown */
+    }
+
+    .countdown-item {
+        flex: 0 1 60px; /* Allow items to grow and shrink, with a base width of 60px */
+        max-width: 80px; /* Set a maximum width for the countdown items */
+    }
+
+    #venue {
+        font-size: 1em; /* Smaller font size for venue */
+    }
+}
+
+#venue {
+    font-size: 1.5em; /* Font size for venue */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for venue */
+    color: #ffffff; /* White color for venue text */
+    margin-top: 20px; /* Space above venue */
+}
+
+#venueLink {
+    color: #ffcc00; /* Gold color for venue link */
+    text-decoration: none; /* Remove underline from link */
+}
+
+#venueLink:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Hide overflow */
+}
+
+.mySlides {
+    display: none; /* Hide slides by default */
+    width: 100%; /* Ensure slides take full width */
+    height: 100%; /* Ensure slides take full height */
+}
+
+img {
+    width: 100%; /* Make images responsive */
+    height: 100%; /* Make images responsive */
+    object-fit: cover; /* Cover the entire area without distortion */
+}
+
+.fade {
+    animation: fade 1.5s; /* Fade animation */
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
